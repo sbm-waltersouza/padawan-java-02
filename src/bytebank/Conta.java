@@ -3,9 +3,20 @@ package bytebank;
 public class Conta {
 
 		double saldo;
-		int agencia = 65;
+		int agencia;
 		int numero;
 		String titular;
 		
+		public void depositar(double valor) {
+			this.saldo += valor;
+		}
 
+		public boolean saca(double valor) {
+			if(this.saldo >= valor) {
+				this.saldo -= valor;
+				return true;
+			} else {
+				return false;
+			}
+		}
 }
